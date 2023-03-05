@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>QR Code</title>
+</head>
+<body>
+    <div class="title">
+        <h1>QR code generator 🔥🔥🔥</h1>
+        <h2>Insert your link to generate a QR code</h2>
+    </div>
+    <form class="input-group" action="/" method="POST">
+        <input class="form-control" type="text" name="link">
+        <button class="btn btn-primary" type="submit">Generate QR code</button>
+    </form>
+    
+    {% if data %}
+    <div class="generated">
+        <img class="img-fluid" src="{{data}}" alt="qrImg" />
+        <p>Here is the QR code we generated for you 🦾</p>
+        <a href="{{''}}"><button class="btn btn-danger">RESET</button></a>
+        </div>
+    {% endif %}
+</body>
+</html>
+
+<!-- styling -->
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    html,
+    body {
+        margin: 0rem 5rem;
+        font-family: 'poppins', sans-serif;
+    }
+    .title{
+        padding: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem ;
+        justify-content: center;
+        align-items: center;
+        color: rgb(37, 37, 37);
+    }
+
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 2rem;
+    }
+    form input {
+
+        font-size: 1.2rem;
+        padding: 0.5rem 1.5rem;
+        width: 60%;
+        background: rgb(90, 90, 90);
+        color: white;
+        border: none;
+    }
+    form button {
+        font-size: 1rem ;
+        background: rgb(41, 46, 121);
+        border: none;
+        color: white;
+        padding: 1rem 1.5rem ;
+        cursor: pointer;
+        border-radius: 0.5rem;
+    }
+
+    a button {
+        font-size: 1rem ;
+        background: rgb(41, 46, 121);
+        border: none;
+        color: white;
+        padding: 1rem 1.5rem ;
+        cursor: pointer;
+        border-radius: 0.5rem;
+    }
+    .img{
+        max-width: 300px;
+        max-height: 300px;
+    }
+    .generated {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+</style>
